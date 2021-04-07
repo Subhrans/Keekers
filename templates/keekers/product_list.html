@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+  <h3>all prducts</h3>
+  <div class="row">
+      <div class="col-md-2 shadow p-3 mb-5 bg-white rounded">
+        <p>for filter</p>
+      </div>
+      <div class="col-md-10 shadow p-3 mb-5 bg-white rounded ">
+        <strong>Products</strong>
+          <div class="row mb-3">
+            {% for item in item_list %}
+            <div class="col-md-4">
+              <div class="card mycard" style="width: 22rem;">
+                <div class="d-flex justify-content-end mr-2 my-2">
+                    <i class="fa fa-heart-o" style="font-size:22px;"></i>
+                </div>
+                <a href="{{item.get_absolute_url}}" class="product_list">
+                  <div class="d-flex justify-content-center my-3">
+                    <img class="card-img-top" src="/media/{{item.p_image}}" alt="test" style="height:120px; width:180px;">
+                  </div>
+
+                  <div class="card-body text-muted">
+                    <h5 class="card-title text-dark">
+                      {{item.p_name}}
+                    </h5>
+                    <div class="">
+                      <div class="float-left btn-success bought-star mr-2">
+                        <p class="card-text mx-1">
+                          4.5 <span class="fa fa-star checked"></span>
+                        </p>
+                      </div>
+
+                       |2033 bought
+                    </div>
+                    <div class="text-dark">
+                      <span class="fa fa-inr"></span>
+                      {{item.p_price}}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            {% if forloop.counter|divisibleby:3 %}
+              </div>
+                <div class="row mb-3">
+            {% endif %}
+          {% endfor %}
+      </div>
+      <nav aria-label="page navigation">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a href="#" class="page-link border-top-0 border-bottom-0 border-left-0 border-right-0"><span aria-hidden="true">&laquo;</span></a>
+          </li>
+
+          <li class="page-item active">
+            <a href="#" class="page-link border-top-0 border-bottom-0 border-left-0 border-right-0">1 <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="page-item">
+            <a href="#" class="page-link border-top-0 border-bottom-0 border-left-0 border-right-0">2</a>
+          </li>
+          <li class="page-item">
+            <a href="#" class="page-link border-top-0 border-bottom-0 border-left-0 border-right-0"><span aria-hidden="true">&raquo;</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+{% endblock %}

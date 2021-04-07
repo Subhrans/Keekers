@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h3>Checkout</h3>
+  <div class="row">
+
+      <div class="col-md-8 shadow-lg p-3 mb-3 bg-white rounded">
+        <form class="" action="home.html" method="post">
+          <div class="form-group row">
+            <div class="col-md-6">
+              <label for="Fname">First Name</label>
+              {{Form.FirstName}}
+            </div>
+            <div class=" col-md-6">
+              <label for="Lame">Last Name</label>
+              {{Form.LastName}}
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-6">
+              <label for="Email">Email</label>
+              {{Form.Email}}
+            </div>
+
+            <div class="col-md-6">
+              <label for="contact">Contact Number</label>
+              {{Form.ContactNumber}}
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-12">
+              <label for="Add1">Address line 1</label>
+              {{Form.Address1}}
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <div class="col-md-12">
+              <label for="Add2">Addres Line 2</label>
+              {{Form.Address2}}
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="align-self-center mx-auto">
+              <button type="submit" class="btn btn-primary rounded proceedButton" name="button" style="font-weight:10px;">Proceed</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+    <div class="col-md-4 ">
+      <h3>Your Cart Items</h3>
+      <div class="row">
+        <div class="col-md-12 shadow-lg mb-3 p-3 bg-white rounded mx-4">
+          <ul class="list-group">
+            {% for item in cartItem %}
+            <li class="list-item d-flex justify-content-between align-items-center {% if not forloop.last %} border-bottom {% endif %}">
+            <p class="px-2 my-3">{{ item.item.p_name }}</p>
+             <span class="badge badge-primary badge-pill">{{item.quantity}}</span>
+           </li>
+           {% endfor %}
+           <!-- <li class="list-item d-flex justify-content-between align-items-center border-bottom">
+             item 2
+            <span class="badge badge-primary badge-pill">10</span>
+          </li>
+          <li class="list-item d-flex justify-content-between align-items-center border-bottom">
+            item 3
+           <span class="badge badge-primary badge-pill">3</span>
+         </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

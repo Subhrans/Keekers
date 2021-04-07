@@ -1,0 +1,8 @@
+{% block login %}
+<div class="container">
+  <form method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-primary" value="Sign Up">
+  </form>
+</div>
+{% endblock %}

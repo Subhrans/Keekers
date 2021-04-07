@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-4">
+  <div class="row margin-auto no-padding">
+    <div class="col-md-4" id="adding_form">
+        <img src="/media/{{item.p_image}}" class="img-fluid img-thumbnail" alt="">
+        {% if item_present %}
+        <a class="btn btn-lg btn-warning my-2" href="{% url 'keekers:cart' %}" id="gotocart">Go To Cart</a>
+        {% else %}
+        <a class="btn btn-lg btn-warning my-2" href="#" data-url="{{object.get_add_to_cart_url}}" id="addToCart">Add To Cart</a>
+        {% endif %}
+        <a class="btn btn-lg btn-danger my2" href="#">Shop Now</a>
+    </div>
+    <div class="col-md-8">
+      <h3>{{item.p_name}}</h3>
+      <h6>Brand : {{item.p_brand}}</h6>
+      <h6>feature: {{item.p_features}}</h6>
+      <p class="">
+        <span class="mr-1">
+          <h6>price</h6>
+          {% if item.p_discount_price %}
+                      <h6><del> $ {{item.p_price}}</del></h6> <h5>$ {{item.p_discount_price}}</h5>
+          {% else %}
+                      <h5>$ {{item.p_price}}</h5>
+          {% endif %}
+        </span>
+      </p>
+
+
+      <hr>
+      <h6>Description: </h6>{{item.p_description}}
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}
+{% block script %}
+ <script type="text/javascript">
+ $(document).ready(function(){
+
+  $('#addToCart').click(function(){
+      $.ajax({
+        type:"GET",
+        url:"{{object.get_add_to_cart_url}}",
+        success:function(response){
+          $('#addToCart').replaceWith('<a class="btn btn-lg btn-warning my-2" href="{% url 'keekers:cart' %}" id="gotocart">Go To Cart</a>');
+        }
+      })
+  });
+ });
+ </script>
+{% endblock %}

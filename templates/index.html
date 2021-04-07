@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div id="keekers_content">
+
+</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          {% for image in banner_list %}
+          <li data-target="#myCarousel" data-slide-to="{{forloop.counter}}" {% if forloop.first %} class="active" {% endif %}></li>
+            {% endfor %}
+        </ol>
+        <div class="carousel-inner">
+          {% for image in banner_list %}
+
+          <div class="carousel-item {% if forloop.first %} active {% endif %} ">
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"></rect></svg> -->
+            <div class="banner no-repeat" style="background:url('/media/{{image.image}}');">
+              <div class="container-fluid">
+                <div class="carousel-caption text-left text-dark">
+                  <h1 id="banner_text">{{image.offText}}</h1>
+                  <p id="banner_text">{{image.offText}}</p>
+                  <p><a class="btn btn-lg btn-primary" href="#" role="button">SHOP NOW</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% for i in banner_list %}
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        {% endfor %}
+      </div>
+
+      <!-- cards section is here -->
+
+<div class="container-fluid">
+     {% for category in Item_list %}
+     <h3 class="my-3 mx-2 ">Mens {{category.0.p_category}} </h3>
+       <div class="row">
+         <div id="demo{{forloop.counter}}" class="col carousel slide" data-ride="carousel">
+           <div class="container carousel-inner">
+             <div class="carousel-item active">
+               {% for products in category %}
+               <div class="col-sm-2 col-md-3 mr-2">
+                 <div class="card" style="width: 18rem; height:20rem;">
+                   <a href="{{products.get_absolute_url}}" class="">
+                     {% if products.p_discount_price %}
+                           <div class="float-right">
+                             <span class="badge badge-warning">Offer</span>
+                           </div>
+                      {% endif %}
+                     <img class="card-img-top img-fluid" src="/media/{{products.p_image}}" alt="Card image cap" style="margin-left: 20px; margin-top: 10px;max-height:150px; max-width:200px;">
+                     <div class="card-body">
+                      <h5 class="card-title">{{products.p_name}}</h5>
+                      {% if products.0.p_description|length > 35 %}
+                          <p class="card-text">{{products.p_description|slice:":35"}}..</p>
+                      {% else %}
+                          <p class="card-text">{{products.p_features}}</p>
+                      {% endif %}
+                    </div>
+                  </a>
+                 </div>
+               </div>
+               {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+             </div>
+           <div class="carousel-item">
+           {% endif %}
+
+
+             {% endfor %}
+            </div>
+           </div>
+           <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev" style="max-width:20px;">
+             <span class="carousel-control-prev-icon"></span>
+           </a>
+           <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next" style="max-width:20px;">
+             <span class="carousel-control-next-icon"></span>
+           </a>
+         </div>
+   </div>
+   {% endfor %}
+</div>
+
+{% endblock %}

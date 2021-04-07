@@ -1,0 +1,95 @@
+{% block body %}
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" id="close">&times;</a>
+  <!-- <div class="container closebtn" onclick="myFunction(this)" id="close" style="display: inline-block;
+  cursor: pointer;">
+    <div class="bar1 bg-light"></div>
+    <div class="bar2 bg-light"></div>
+    <div class="bar3 bg-light"></div>
+  </div> -->
+  <ul class="navbar-nav">
+    <li>
+      <a href="{% url 'EMS:attendance' %}" target="test">Communication</a>
+    </li>
+    <li>
+      <a href="#">Petty Cash</a>
+    </li>
+    <li class="collapsed active" data-target="#hrdrop" data-toggle="collapse">
+      <a>HR management</a>
+    </li>
+    <ul class="collapse navbar-nav ml-4" id="hrdrop">
+      <li class="active"><a href="" id="Attendance" data-url="{% url 'EMS:attendance' %}">Attendance</a></li>
+      <li><a href="#">Leave</a></li>
+      <li><a href="#">Reports</a></li>
+    </ul>
+    <li>
+      <a href="#">Clients</a>
+    </li>
+    <li>
+      <a href="#">Reports</a>
+    </li>
+  </ul>
+</div>
+<!-- <div class="dropdown" id="dropdown">
+
+</div> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<button type="button" class="navbar-toggler" name="button" data-toggle="collapse" data-target="#sub_menu" aria-label="Toggle navigation" aria-controls="navbarSupportedContent" aria-expanded="false">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="sub_menu">
+<ul class="navbar-nav" style="margin-top:-8px; margin-bottom:-8px;">
+  <li class="nav-item mr-4">
+    <a href="#" class="nav-link">Communication</a>
+  </li>
+  <li class="nav-item mr-4">
+    <a href="#" class="nav-link">Petty Cash</a>
+  </li>
+  <li class="nav-item mr-4">
+    <a href="#" class="nav-link">Reports</a>
+  </li>
+  <li class="nav-item mr-4">
+    <a href="#" class="nav-link">Incentives</a>
+  </li>
+  <li class="nav-item dropdown mr-4">
+    <a href="#" class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="NavDrop">HR management</a>
+    <div class="dropdown-menu bg-dark" aria-labelledby="NavDrop">
+      <a href="#" class="dropdown-item text-white">Attendance</a>
+      <a href="#" class="dropdown-item text-white">Leave</a>
+      <a href="#" class="dropdown-item text-white"> Leave Balence report</a>
+      <a href="#" class="dropdown-item text-white"> Weak Off Balence Report</a>
+      <a href="#" class="dropdown-item text-white"> Store Employee Attendance Entry</a>
+      <a href="#" class="dropdown-item text-white"> Transfer Employee</a>
+
+      <a href="#" class="dropdown-item text-white">Employee Confirmation Assesment</a>
+      <a href="#" class="dropdown-item text-white">Manpower / Head count monthly Confirmation</a>
+      <a href="#" class="dropdown-item text-white">Employee Bank accounts Details</a>
+      <a href="#" class="dropdown-item text-white">Salary / Incentives Hold / Areas Request</a>
+      <a href="#" class="dropdown-item text-white">Manpower Requition Form</a>
+      <a href="#" class="dropdown-item text-white">Employee Separation</a>
+
+      <a href="#" class="dropdown-item text-white">Separation Approval</a>
+      <a href="#" class="dropdown-item text-white">Keekers Holiday List</a>
+      <a href="#" class="dropdown-item text-white">Applicant Profile Upload</a>
+      <a href="#" class="dropdown-item text-white">Exit Formalities</a>
+      <a href="#" class="dropdown-item text-white">Salary Deduction details</a>
+      <a href="#" class="dropdown-item text-white">Employee Attendance for Payroll</a>
+
+      <a href="#" class="dropdown-item text-white">deactive Mobile App device</a>
+      <a href="#" class="dropdown-item text-white">NEw Hirring Employee details</a>
+    </div>
+  </li>
+  <li class="nav-item mr-4">
+    <a href="#" class="nav-link">Customer Care</a>
+  </li>
+  <li class="nav-item mr-4">
+    <a href="#" class="nav-link">Aria Manager</a>
+  </li>
+  <li class="nav-item mr-4">
+    <a href="#" class="nav-link">Ticket Management System</a>
+  </li>
+</ul>
+</div>
+</nav> -->
+
+{% endblock %}

@@ -1,0 +1,145 @@
+body{
+  margin-top:0px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #595959;
+  background: #fff;
+}
+.banner{
+  width:100%;
+  height:70vh;
+}
+.banner-conent{
+  color:#fff;
+  width: 55%;
+  padding-top: 170px;
+}
+.banner-content span{
+font-size: 18px;
+font-weight: 500;
+letter-spacing: 3px;
+}
+
+.banner-content h1{
+margin-bottom: 10px;
+font-size: 60px;
+font-weight: 600;
+letter-spacing: 3px;
+}
+
+.banner-content p{
+  margin-bottom: 40px;
+font-size: 18px;
+letter-spacing: 1px;
+font-style: italic;
+}
+
+.banner-content a{
+  text-decoration: none;
+  margin-right:20px;
+}
+
+.col-md-3{
+  display: inline-block;
+  margin-left: 4px;
+
+}
+.col-md-3 img {
+    max-width: 247px;
+    height: 216px;
+}
+.carousel-indicators{
+  position: absolute;
+  bottom:-50px;
+}
+
+.carousel .carousel-indicators li {
+    width: .625rem;
+    height: .625rem;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: red;
+}
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon{
+  background-color: blue;
+}
+body .no-padding{
+  padding-left: 0;
+  padding-right: 0;
+
+}
+.carousel-inner .carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+}
+.cartImg{
+ width: 80px;
+ height: 50px;
+}
+.mycontainer{
+  margin-right: 40%;
+}
+.fa.fa-star.checked{
+  color:#fff;
+}
+.fa .fa-star{
+  color:black;
+}
+.bought-star{
+  border-radius: 50px;
+}
+.fa-heart-o:hover{
+  color:red;
+}
+.mycard:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.product_list:hover{
+  text-decoration: none;
+}
+.proceedButton{
+  border: 0;
+  background: #0087cc;
+  border-radius: 4px;
+  box-shadow: 0 5px 0 #006599;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 12px 20px;
+  transition: all .1s linear;
+}
+.proceedButton:active {
+  box-shadow: 0 2px 0 #006599;
+  transform: translateY(3px);
+}
+#banner_text{
+  transition-delay: 1s;
+  transition-duration: 1s;
+  transition-timing-function:ease-in-out;
+}

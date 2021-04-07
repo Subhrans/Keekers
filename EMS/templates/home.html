@@ -1,0 +1,22 @@
+
+{% extends 'Ebase.html' %}
+{% load static %}
+{% block body %}
+{% include 'sub_nav.html' %}
+<div class="main bg-dark mb-2" id="main" style="margin-right:-20px;max-height:42px;">
+  <!-- <span style="font-size:30px;cursor:pointer;padding-bottom:0; margin-top:-10px;" onclick="openNav()" class="openbtn border pl-3 pt-3" id="open">&#9776;</span> -->
+  <div id="open" style="display: inline-block;
+  cursor: pointer; margin-top:-14px;">
+    <div class="bar1 bg-light"></div>
+    <div class="bar2 bg-light"></div>
+    <div class="bar3 bg-light"></div>
+  </div>
+  <div class="" style="margin-left:60px; margin-top:-45px;">
+    <i class="fas fa-user" style="color:white;"></i>
+    <p class="h3 text-light" style="margin-left:30px; margin-top:-25px;">Employee</p>
+  </div>
+
+  <div class="container" id="main_content">
+  </div>
+</div>
+{% endblock %}

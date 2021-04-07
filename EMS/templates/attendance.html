@@ -1,0 +1,24 @@
+{% extends 'Ebase.html' %}
+{% block body %}
+{% include 'sub_nav.html' %}
+<div class="ok" id="attendanceNav">
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light" id="navigation">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="#" class="nav-link">Attendance Report</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="row attendance_row">
+  <div class="col">
+    <p class="h3"> Make Attendance</p>
+    <form class="border shadow-lg p-3 mt-4 mb-3 bg-white rounded" action="index.html" method="post">
+      {% csrf_token %}
+      {{attaind.as_p}}
+      <input type="submit" name="submit" value="submit" class="btn btn-warning btn-block">
+    </form>
+  </div>
+</div>
+{% endblock %}
